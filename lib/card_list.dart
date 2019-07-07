@@ -24,14 +24,14 @@ class CardListViewWidget extends StatelessWidget {
 
     listOfWidgets.removeLast();
 
-    // TODO: implement build
     return  Container(
-      height: 250,
+      height: 270,
       child: ListView(
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.only(
           left: spaceForChild,
-          right: spaceForChild
+          right: spaceForChild,
+          bottom: spaceForChild
         ),
         children: listOfWidgets,
       ),

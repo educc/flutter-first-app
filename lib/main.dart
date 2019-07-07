@@ -68,24 +68,22 @@ class _MyHomePageState extends State<MyHomePage> {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     );
 
-    final body = Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          HeaderWidget("Bienvenido"),
-          Expanded(
-            child: descriptionWidget,
-          )
-        ]
+
+    final headerWidget = HeaderWidget("Bienvenido");
+
+    final descWidgetContainer = Container(
+      margin: EdgeInsets.only(
+        top: 330
+      ),
+      child: descriptionWidget,
     );
-    
-    final test = new CardListViewWidget(
-        [
-          "assets/img/mountain1.webp",
-          "assets/img/mountain2.webp",
-          "assets/img/mountain3.webp",
-          "assets/img/mountain4.webp",
-        ]
+
+
+    final body = Stack(
+      children: <Widget>[
+        descWidgetContainer,
+        headerWidget
+      ],
     );
 
     return Scaffold(
