@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'card_list.dart';
+import 'package:flutter_app/common/header_title.dart';
+import 'package:flutter_app/home/card_list.dart';
 
 class HeaderWidget extends StatelessWidget {
 
@@ -17,20 +18,7 @@ class HeaderWidget extends StatelessWidget {
     ];
 
 
-    var titleWidget = Container(
-      padding: EdgeInsets.only(
-        top: 50, left: 20
-
-      ),
-      child: Text(
-        this.title,
-        style: TextStyle(
-          fontSize: 24,
-          color: Colors.white,
-          fontWeight: FontWeight.bold
-        ),
-      ),
-    );
+    var titleWidget = HeaderTitleWidget(this.title);
 
     var listView =  Container(
       margin: EdgeInsets.only(

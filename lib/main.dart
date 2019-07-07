@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'description_place.dart';
-import 'header.dart';
-import 'card_list.dart';
+import 'package:flutter_app/platzi_trips.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -47,54 +46,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    var descriptionWidget = DescriptionPlace(
-        "Chiclayo",
-        4,
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    );
 
-
-    final headerWidget = HeaderWidget("Bienvenido");
-
-    final descWidgetContainer = Container(
-      margin: EdgeInsets.only(
-        top: 330
-      ),
-      child: descriptionWidget,
-    );
-
-
-    final body = Stack(
-      children: <Widget>[
-        descWidgetContainer,
-        headerWidget
-      ],
-    );
-
-    return Scaffold(
-      body: Container(
-        child:  body
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    return PlatziTrips();
   }
 }
